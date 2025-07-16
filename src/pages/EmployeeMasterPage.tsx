@@ -6,7 +6,7 @@ type Employee = {
   id: string;
   name: string;
   joinedAt: string;      // 入社日
-  registeredAt: string;  // 登録日（システム用）
+  registeredAt: string;  // 登録日（システ
 };
 
 const employees: Employee[] = [
