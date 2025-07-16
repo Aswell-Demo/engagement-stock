@@ -1,12 +1,11 @@
 // src/pages/EmployeeMasterPage.tsx
 import { useMemo } from "react";
-import dayjs from "dayjs";
 
 type Employee = {
   id: string;
   name: string;
   joinedAt: string;      // 入社日
-  registeredAt: string;  // 登録日（システ
+  registeredAt: string;  // 登録日
 };
 
 const employees: Employee[] = [
@@ -15,9 +14,20 @@ const employees: Employee[] = [
   { id: "102", name: "テスト 花子",   joinedAt: "2025/02/01", registeredAt: "2027/02/01" },
 ];
 
+// 仮の現在日（2025年7月1日とする）
+const CURRENT_DATE = new Date("2025-07-01");
+
 const isEligible = (joinedAt: string): boolean => {
-  const now = dayjs();
-  return dayjs(joinedAt).add(2, "year").isBefore(now);
+  const joinDate = new Date(joinedAt);
+  const diffInYears = CURRENT_DATE.getFullYear() - joinDate.getFullYear();
+  const hasPassed2Years =
+    diffInYears > 2 ||
+    (diffInYears === 2 &&
+      (CURRENT_DATE.getMonth() > joinDate.getMonth() ||
+        (CURRENT_DATE.getMonth() === joinDate.getMonth() &&
+         CURRENT_DATE.getDate() >= joinDate.getDate())));
+
+  return hasPassed2Years;
 };
 
 const EmployeeMasterPage = () => {
@@ -58,14 +68,15 @@ const EmployeeMasterPage = () => {
           ))}
         </tbody>
       </table>
-          <div className="flex justify-end mb-4">
-           <button
-           className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-           onClick={() => window.history.back()}
-          >
+
+      <div className="flex justify-end mb-4">
+        <button
+          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+          onClick={() => window.history.back()}
+        >
           戻る
-           </button>
-          </div>
+        </button>
+      </div>
     </div>
   );
 };
