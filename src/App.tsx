@@ -10,7 +10,7 @@ import RequirementMasterPage from "./pages/RequirementMasterPage";
 import RedeemPointsPage from "./pages/RedeemPointsPage";
 import PointDetailTaro from "./pages/PointDetailTaro";
 import PointDetailJiro from "./pages/PointDetailJiro";
-import UserRedeemPointsPage from "./pages/RedeemPointsPage";
+import UserRedeemPointsPage from "./pages/UserRedeemPointsPage";
 
 function App() {
   return (

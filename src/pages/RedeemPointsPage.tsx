@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 
 export default function RedeemPointsPage() {
   const [user] = useState({
@@ -9,16 +9,13 @@ export default function RedeemPointsPage() {
   });
 
   const [requestedAmount] = useState(5000); // 仮の申請ポイント数
-  const [decision, setDecision] = useState('');
   const [message, setMessage] = useState('');
 
   const handleApprove = () => {
-    setDecision('approved');
     setMessage(`申請を承認しました：${requestedAmount.toLocaleString()}pt`);
   };
 
   const handleReject = () => {
-    setDecision('rejected');
     setMessage('申請を却下しました');
   };
 
