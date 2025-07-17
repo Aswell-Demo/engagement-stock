@@ -10,6 +10,7 @@ import RequirementMasterPage from "./pages/RequirementMasterPage";
 import RedeemPointsPage from "./pages/RedeemPointsPage";
 import PointDetailTaro from "./pages/PointDetailTaro";
 import PointDetailJiro from "./pages/PointDetailJiro";
+import UserRedeemPointsPage from "./pages/RedeemPointsPage";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/admin/redeempoints"    element={<RedeemPointsPage />}/>
         <Route path="/admin/PointDetailTaro" element={<PointDetailTaro />}/>
         <Route path="/admin/PointDetailJiro" element={<PointDetailJiro />}/>
-      
+        <Route path="/user/redeem"           element={<UserRedeemPointsPage />} />
       </Routes>
     </BrowserRouter>
   );
