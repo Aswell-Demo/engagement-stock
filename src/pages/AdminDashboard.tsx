@@ -54,6 +54,12 @@ const AdminDashboard = () => {
           ✅ ポイント付与
         </button>
         <button
+          onClick={() => navigate("/admin/redeempoints")}
+          className="bg-pink-500 hover:bg-pink-600 text-white py-4 rounded shadow text-lg col-span-1 md:col-span-2"
+        >
+          💰 ポイント換金承認処理
+        </button>
+        <button
           onClick={() => navigate("/admin/view-all")}
           className="bg-green-500 hover:bg-green-600 text-white py-4 rounded shadow text-lg"
         >
@@ -70,12 +76,6 @@ const AdminDashboard = () => {
           className="bg-purple-500 hover:bg-purple-600 text-white py-4 rounded shadow text-lg"
         >
           📋 ポイント要件マスタ
-        </button>
-        <button
-          onClick={() => navigate("/admin/redeempoints")}
-          className="bg-pink-500 hover:bg-pink-600 text-white py-4 rounded shadow text-lg col-span-1 md:col-span-2"
-        >
-          💰 ポイント消費処理
         </button>
       </div>
     </div>

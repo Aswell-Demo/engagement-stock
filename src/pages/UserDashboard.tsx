@@ -165,6 +165,13 @@ const UserDashboard = () => {
                 })}
               </tbody>
             </table>
+             <button
+                onClick={() => navigate("/user/redeem")}
+                className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded"
+                >
+                💰 換金申請
+             </button>
+
           </div>
         </div>
       </div>
