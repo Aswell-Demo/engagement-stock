@@ -1,4 +1,4 @@
-//test
+//testt
 import React, { useState } from 'react';
 
 export default function RedeemPointsPage() {
